@@ -1,17 +1,17 @@
 #include <stdio.h> //biblioteca de comunicação com o usuario
-#include <stdlib.h> //biblioteca de alocação de espaço em memoria
-#include <locale.h> //biblioteca de alocações de texto por regiÃ£o
+#include <stdlib.h> //biblioteca de alocações de espaÃ§o em memoria
+#include <locale.h> //biblioteca de alocações de texto por regiao
 #include <string.h> // biblioteca responsavel da string
 
-int registro() // funÃ§Ã£o responsavel por cadastra os usuarios no sistema
+int registro() // funções responsavel por cadastra os usuarios no sistema
 {
-	//inicio da criaÃ§Ã£o da string
+	//inicio da criação da string
 	char arquivo[40];
 	char cpf[40];
 	char nome[40];
 	char sobrenome[40];
 	char cargo[40];
-	//fim da criaÃ§Ã£o da string
+	//fim da criações da string
 	
 	printf("Digite o CPF para se cadastra:");
 	scanf("%s", cpf);
@@ -81,7 +81,7 @@ int registro() // funÃ§Ã£o responsavel por cadastra os usuarios no sistema
 	
 	while(fgets(conteudo, 200, file)!= NULL)
 	{
-		printf("Essas sÃ£o as informações do usuario:");
+		printf("Essas são as informações do usuario:");
 		printf("%s", conteudo);
 		printf("\n\n");
 	}
@@ -119,10 +119,14 @@ int main()
 	char senhadigitada[10]="a";
 	int comparacao;
 	
+	printf("### Cartorio da EBAC ###\n\n");
+	printf("Login de administrador\n\nDigite a sua senha:");
+	scanf("%s",senhadigitada);
+	
 	comparacao = strcmp(senhadigitada, "admin");
 	
-
-	
+	if(comparacao==0)
+	{
 	
 	
 		system("cls");
@@ -134,12 +138,12 @@ int main()
     		setlocale(LC_ALL, "portuguese");
 
    			printf("### Cartorio da EBAC ###\n\n"); //inicio do menu
-   			printf("Escolha a opÃ§Ã£o desejada do menu:\n\n");
+   			printf("Escolha a opções desejada do menu:\n\n");
     		printf("\t1 - Registrar nomes\n");
    			printf("\t2 - Consultar nomes\n");
    			printf("\t3 - Deletar nomes\n");
    			printf("\t4 - sair do menu\n");
-			printf("OpÃ§Ã£o:"); //fim do men
+			printf("Opções:"); //fim da main
 			scanf("%d",&opcao); //armazenando a escolha do usuario
     
   		 system("cls");//responsavel por apagar a tela
@@ -164,11 +168,13 @@ int main()
 				break;
 						
 				default:
-				printf ("essa funÃ§Ã£o nao existe\n");
+				printf ("essa função nao existe\n");
     			system("pause");
     			break;
 			}
     
 		}
-
+	}
+	else
+		printf("senha incorreta");
 }
